@@ -3,6 +3,8 @@ import { FormNewsLetter } from './components/FormNewsLetter';
 import { Header } from './components/Header';
 import { Product } from './components/Product';
 
+import styles from './HomePage.module.css';
+
 import './global.css';
 
 const products = [
@@ -126,15 +128,21 @@ export function HomePage() {
       <Header />
       <FormNewsLetter />
       <Divisor text="Sua seleção especial" />
-      <Product
-        key={products[0].id}
-        image={products[0].image}
-        name={products[0].name}
-        description={products[0].description}
-        oldPrice={products[0].oldPrice}
-        price={products[0].price}
-        installments={products[0].installments}
-      />
+      <div className={styles.wrapper}>
+        {products.map(product => {
+          return (
+            <Product
+              key={product.id}
+              image={product.image}
+              name={product.name}
+              description={product.description}
+              oldPrice={product.oldPrice}
+              price={product.price}
+              installments={product.installments}
+            />
+          );
+        })}
+      </div>
     </main>
   );
 }
