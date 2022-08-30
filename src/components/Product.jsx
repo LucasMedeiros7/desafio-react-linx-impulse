@@ -10,6 +10,7 @@ export function Product(props) {
           <strong>{props.name}</strong>
           <p>{props.description}</p>
         </div>
+
         <div className={styles.price}>
           <span>De: R${props.oldPrice}</span>
           <strong>Por: R${props.price}</strong>
