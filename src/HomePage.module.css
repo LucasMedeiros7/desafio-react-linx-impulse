@@ -1,10 +1,17 @@
 .wrapper {
   margin: 20px auto;
-  padding-left: 2.15rem;
+  width: 90%;
+  max-width: 1000px;
 
-  max-width: 980px;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+}
 
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+@media (max-width: 768px) {
+  html {
+    font-size: 90%;
+    overflow-x: hidden;
+  }
 }
