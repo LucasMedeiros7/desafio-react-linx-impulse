@@ -1,0 +1,13 @@
+.productImg {
+  width: max-content;
+  object-fit: cover;
+}
+
+.nameAndDescription {
+  background-color: blue;
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+}

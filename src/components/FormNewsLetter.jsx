@@ -57,7 +57,7 @@ export function FormNewsLetter() {
             type="radio"
             id="masculino"
             checked={checkbox === 'masculino'}
-            onClick={() => handleCheckBox('masculino')}
+            onChange={() => handleCheckBox('masculino')}
           />
           <label htmlFor="masculino">Masculino</label>
 
@@ -65,7 +65,7 @@ export function FormNewsLetter() {
             type="radio"
             id="feminino"
             checked={checkbox === 'feminino'}
-            onClick={() => handleCheckBox('feminino')}
+            onChange={() => handleCheckBox('feminino')}
           />
           <label htmlFor="feminino">Feminino</label>
         </div>
