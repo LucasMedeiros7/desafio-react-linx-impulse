@@ -1,22 +1,24 @@
 import { useState } from 'react';
+
 import styles from './FormNewsLetter.module.css';
 
 export function FormNewsLetter() {
   const [checkbox, setCheckbox] = useState('');
 
-  function handleCheckBox(sex) {
-    if (checkbox === sex) {
+  function handleCheckBox(genre) {
+    if (checkbox === genre) {
       setCheckbox('');
       return;
     }
 
-    setCheckbox(sex);
+    setCheckbox(genre);
   }
 
   return (
     <div className={styles.container}>
       <aside className={styles.aside}>
         <h2>Ajude o algorítimo a ser mais certeiro</h2>
+
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
           ultricies tellus nec mi porta convallis sollicitudin eu urna. Mauris

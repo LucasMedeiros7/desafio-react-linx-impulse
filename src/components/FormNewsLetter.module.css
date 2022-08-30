@@ -42,6 +42,11 @@
   outline-color: #bebebe;
 }
 
+.checkboxes label,
+.checkboxes input {
+  cursor: pointer;
+}
+
 .checkboxes label {
   margin: 0 8px;
 }

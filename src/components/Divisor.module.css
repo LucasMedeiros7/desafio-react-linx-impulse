@@ -1,0 +1,32 @@
+.divisor {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.divisor strong {
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.divisor strong::before {
+  content: '';
+  position: absolute;
+  width: 22.6rem;
+  height: 0.09rem;
+  background-color: #00000044;
+
+  top: 0.69rem;
+  left: -375px;
+}
+
+.divisor strong::after {
+  content: '';
+  position: absolute;
+  width: 22.6rem;
+  height: 0.09rem;
+  background-color: #00000044;
+
+  top: 0.69rem;
+  left: 198px;
+}

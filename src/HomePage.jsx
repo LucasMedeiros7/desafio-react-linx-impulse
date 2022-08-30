@@ -1,13 +1,17 @@
+import { Divisor } from './components/Divisor';
 import { FormNewsLetter } from './components/FormNewsLetter';
 import { Header } from './components/Header';
+import { Product } from './components/Product';
 
 import './global.css';
 
 export function HomePage() {
   return (
-    <div>
+    <main>
       <Header />
       <FormNewsLetter />
-    </div>
+      <Divisor text="Sua seleção especial" />
+      <Product />
+    </main>
   );
 }
