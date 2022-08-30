@@ -32,6 +32,11 @@
   gap: 2.5rem;
 }
 
+.footer div {
+  display: flex;
+  gap: 2.5rem;
+}
+
 .footer a {
   text-decoration: none;
   background-color: #ffffff;
@@ -46,4 +51,38 @@
   color: white;
   background-color: #888888;
   transform: scale(1.1);
+}
+
+@media (max-width: 800px) {
+  .header strong,
+  h1,
+  p {
+    align-self: flex-start;
+    margin-left: 1rem;
+    padding-right: 0.5rem;
+  }
+
+  .header p {
+    margin-bottom: 1.6rem;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  .footer div:first-child a {
+    padding: 1rem 1rem;
+  }
+
+  .footer div:nth-child(2) a:first-child {
+    padding: 1rem 1.3rem;
+  }
+
+  .footer div:nth-child(2) a:last-child {
+    padding: 1rem 2.3rem;
+  }
 }

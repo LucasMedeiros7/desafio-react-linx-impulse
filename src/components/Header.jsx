@@ -12,10 +12,14 @@ export function Header() {
       </p>
 
       <footer className={styles.footer}>
-        <a href="#">Conheça a Linx</a>
-        <a href="#">Ajude o algorítimo</a>
-        <a href="#">Seus produtos</a>
-        <a href="#">Compartilhe</a>
+        <div>
+          <a href="#">Conheça a Linx</a>
+          <a href="#">Ajude o algorítimo</a>
+        </div>
+        <div>
+          <a href="#">Seus produtos</a>
+          <a href="#">Compartilhe</a>
+        </div>
       </footer>
     </header>
   );
