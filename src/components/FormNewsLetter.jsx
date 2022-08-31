@@ -61,7 +61,7 @@ export function FormNewsLetter() {
           <label htmlFor="feminino">Feminino</label>
         </div>
 
-        <button>Enviar</button>
+        <button type='submit'>Enviar</button>
       </form>
     </div>
   );

@@ -1,0 +1,22 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3.8rem;
+  color: #fff;
+
+  margin-top: 70px;
+  height: 15.938rem;
+  background-image: url('../assets/bg-footer.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 764px) {
+  .footer p {
+    display: block;
+    margin: 0 auto;
+  }
+}

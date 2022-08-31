@@ -9,6 +9,8 @@ import { Product } from './components/Product';
 import styles from './HomePage.module.css';
 
 import './global.css';
+import { FormShareWithFriends } from './components/FormShareWithFriends';
+import { Footer } from './components/Footer';
 
 const url = 'https://frontend-intern-challenge-api.iurykrieger.vercel.app/products';
 
@@ -73,7 +75,11 @@ export function HomePage() {
         Ainda mais produtos aqui!
       </button>
 
-      <Divisor text="Compartilhe a novidade" />
+      <Divisor text="Compartilhe novidade" />
+
+      <FormShareWithFriends />
+
+      <Footer />
     </main>
   );
 }
