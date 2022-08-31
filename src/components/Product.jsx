@@ -12,10 +12,13 @@ export function Product(props) {
         </div>
 
         <div className={styles.price}>
-          <span>De: R${props.oldPrice}</span>
-          <strong>Por: R${props.price}</strong>
+          <span>De: R$ {props.oldPrice - 1},99</span>
+
+          <strong>Por: R$ {props.price - 1},99</strong>
+
           <small>
-            ou {props.installments.count}x de R${props.installments.value}0
+            ou {props.installments.count}x de R${' '}
+            {String(props.installments.value).replace('.', ',')}0
           </small>
         </div>
 

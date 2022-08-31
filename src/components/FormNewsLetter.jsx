@@ -5,15 +5,6 @@ import styles from './FormNewsLetter.module.css';
 export function FormNewsLetter() {
   const [checkbox, setCheckbox] = useState('');
 
-  function handleCheckBox(genre) {
-    if (checkbox === genre) {
-      setCheckbox('');
-      return;
-    }
-
-    setCheckbox(genre);
-  }
-
   return (
     <div className={styles.container}>
       <aside className={styles.aside}>
@@ -57,7 +48,7 @@ export function FormNewsLetter() {
             type="radio"
             id="masculino"
             checked={checkbox === 'masculino'}
-            onChange={() => handleCheckBox('masculino')}
+            onChange={() => setCheckbox('masculino')}
           />
           <label htmlFor="masculino">Masculino</label>
 
@@ -65,7 +56,7 @@ export function FormNewsLetter() {
             type="radio"
             id="feminino"
             checked={checkbox === 'feminino'}
-            onChange={() => handleCheckBox('feminino')}
+            onChange={() => setCheckbox('feminino')}
           />
           <label htmlFor="feminino">Feminino</label>
         </div>
