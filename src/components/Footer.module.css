@@ -14,7 +14,7 @@
   background-size: cover;
 }
 
-@media (max-width: 764px) {
+@media screen and (max-width: 764px) {
   .footer p {
     display: block;
     margin: 0 auto;

@@ -2,8 +2,43 @@ import { useState } from 'react';
 
 import styles from './FormNewsLetter.module.css';
 
+function validateCPF(cpf) {
+  const CPFatualizado = String(cpf).replace(/\D/g, '');
+
+  if (CPFatualizado.length !== 11 && !/[A-Z]/gi.test(CPFatualizado)) {
+    return false;
+  }
+
+  return true;
+}
+
+function validateEmail(email) {
+  const regexValidateEmail = /^\S+@\S+\.\S+$/;
+  return regexValidateEmail.test(email);
+}
+
 export function FormNewsLetter() {
   const [checkbox, setCheckbox] = useState('');
+  const [inputValues, setInputValues] = useState({});
+
+  function handleValidateInputs(event) {
+    event.preventDefault();
+
+    const { CPF, email } = inputValues;
+
+    if (!validateEmail(email)) {
+      alert('Insira um E-mail válido');
+      return;
+    }
+
+    if (!validateCPF(CPF)) {
+      alert('Insira um CPF válido');
+      return;
+    }
+
+    alert('Cadastro feito com sucesso');
+    window.location.reload();
+  }
 
   return (
     <div className={styles.container}>
@@ -31,16 +66,30 @@ export function FormNewsLetter() {
         </p>
       </aside>
 
-      <form className={styles.form}>
+      <form onSubmit={handleValidateInputs} className={styles.form}>
         <div className={styles.formInputs}>
           <label htmlFor="name">Seu nome:</label>
-          <input type="text" id="name" />
+          <input required type="text" id="name" />
 
           <label htmlFor="email">E-mail:</label>
-          <input type="text" id="email" />
+          <input
+            required
+            type="email"
+            id="email"
+            onChange={e =>
+              setInputValues({ ...inputValues, email: e.target.value })
+            }
+          />
 
           <label htmlFor="cpf">CPF:</label>
-          <input type="text" id="cpf" />
+          <input
+            required
+            type="text"
+            id="cpf"
+            onChange={e =>
+              setInputValues({ ...inputValues, CPF: e.target.value })
+            }
+          />
         </div>
 
         <div className={styles.checkboxes}>
@@ -61,7 +110,7 @@ export function FormNewsLetter() {
           <label htmlFor="feminino">Feminino</label>
         </div>
 
-        <button type='submit'>Enviar</button>
+        <button type="submit">Enviar</button>
       </form>
     </div>
   );

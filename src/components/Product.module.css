@@ -51,6 +51,9 @@
 .container {
   display: flex;
   flex-direction: column;
+
+  width: 100%;
+  max-width: max-content;
 }
 
 .infoProduct button {
@@ -69,7 +72,7 @@
   box-shadow: 4px 4px 4px #bebebe;
 }
 
-@media (max-width: 740px) {
+@media screen and (max-width: 740px) {
   .container {
     flex-direction: row;
     gap: 1.4rem;

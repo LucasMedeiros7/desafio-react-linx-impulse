@@ -53,7 +53,7 @@
   transform: scale(1.1);
 }
 
-@media (max-width: 800px) {
+@media screen and (max-width: 800px) {
   .header strong,
   h1,
   p {
