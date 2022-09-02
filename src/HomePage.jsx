@@ -51,7 +51,7 @@ export function HomePage() {
     <main>
       <Header />
       <FormNewsLetter />
-      <Divisor text="Sua seleção especial" />
+      <Divisor id='products' text="Sua seleção especial" />
 
       <div className={styles.wrapper}>
         {products?.map(product => {

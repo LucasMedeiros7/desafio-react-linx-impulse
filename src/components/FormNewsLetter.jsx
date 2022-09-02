@@ -42,7 +42,7 @@ export function FormNewsLetter() {
 
   return (
     <div className={styles.container}>
-      <aside className={styles.aside}>
+      <aside id='helpAlgoritm' className={styles.aside}>
         <h2>Ajude o algorítimo a ser mais certeiro</h2>
 
         <p>

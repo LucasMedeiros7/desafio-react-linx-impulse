@@ -25,7 +25,7 @@ export function FormShareWithFriends() {
         agora!
       </p>
 
-      <form onSubmit={handleValidateInputs} className={styles.form}>
+      <form id='share' onSubmit={handleValidateInputs} className={styles.form}>
         <div className={styles.inputsContainer}>
           <div>
             <label htmlFor="friendName">Nome do seu amigo: </label>
