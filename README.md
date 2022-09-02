@@ -2,10 +2,12 @@
 
 ### O desafio consiste no desenvolvimento do layout de uma landing page com uma grade de produtos e um formulário de newsletter. O principal objetivo é transformar este layout em uma página funcional.
 
-<div style="display: flex; justify-content: center; align-items: center; gap: 30px; margin-top: 80px;">
-  <img width=450  height=290 src=".github/desktopPreview.gif">
-  <img width=150  height=290 src=".github/mobilePreview.gif">
-</div>
+<br>
+
+<p align="center">
+  <img width=550  height=330 src=".github/desktopPreview.gif">
+  <img height=362 src=".github/mobilePreview.gif">
+</p>
 
 <br>
 <br>
