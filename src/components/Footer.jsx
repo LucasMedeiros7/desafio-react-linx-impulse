@@ -6,7 +6,7 @@ export function Footer() {
     <footer className={styles.footer}>
       <p>Testando suas habilidades em ReactJS</p>
       <p>Resilia Educação</p>
-      <p>2019</p>
+      <p>2022</p>
     </footer>
 
   )
