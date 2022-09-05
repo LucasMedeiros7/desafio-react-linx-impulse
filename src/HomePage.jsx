@@ -5,41 +5,41 @@ import { Header } from './components/Header';
 import { FormNewsLetter } from './components/FormNewsLetter';
 import { Divisor } from './components/Divisor';
 import { Product } from './components/Product';
+import { FormShareWithFriends } from './components/FormShareWithFriends';
+import { Footer } from './components/Footer';
 
 import styles from './HomePage.module.css';
 
 import './global.css';
-import { FormShareWithFriends } from './components/FormShareWithFriends';
-import { Footer } from './components/Footer';
-
-const url = 'https://frontend-intern-challenge-api.iurykrieger.vercel.app/products';
 
 export function HomePage() {
   const [products, setProducts] = useState([]);
   const [isFetching, setIsFetching] = useState(true);
-  const [requestCount, setRequestCount] = useState(1);
+  const [url, setUrl] = useState(
+    'https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=1'
+  );
 
   async function fetchData(firstTimeLoadPage = false) {
-    const response = await fetch(`${url}?page=${requestCount}`);
-    const data = await response.json();
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
 
-    setRequestCount(requestCount + 2);
+      if (firstTimeLoadPage) {
+        setProducts([...data.products]);
+      } else {
+        setProducts(state => [...state, ...data.products]);
+      }
 
-    if (firstTimeLoadPage) {
-      setProducts(data.products);
+      setUrl('https://' + data.nextPage);
+    } catch (err) {
+      console.error(err);
+    } finally {
       setIsFetching(false);
-    } else {
-      setProducts(state => [...state, ...data.products]);
     }
   }
 
   function handleLoadMoreProducts() {
     setIsFetching(true);
-
-    setTimeout(() => {
-      setIsFetching(false);
-    }, 800); // Simular uma demora na requisição
-
     fetchData();
   }
 
@@ -51,7 +51,7 @@ export function HomePage() {
     <main>
       <Header />
       <FormNewsLetter />
-      <Divisor id='products' text="Sua seleção especial" />
+      <Divisor id="products" text="Sua seleção especial" />
 
       <div className={styles.wrapper}>
         {products?.map(product => {
@@ -76,9 +76,7 @@ export function HomePage() {
       </button>
 
       <Divisor text="Compartilhe novidade" />
-
       <FormShareWithFriends />
-
       <Footer />
     </main>
   );
