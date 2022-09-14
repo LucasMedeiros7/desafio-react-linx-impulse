@@ -28,6 +28,5 @@
 @media screen and (max-width: 768px) {
   html {
     font-size: 90%;
-    overflow-x: hidden;
   }
 }
